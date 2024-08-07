@@ -1,0 +1,48 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin: 0 auto;
+  margin-top: 50px;
+  align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  .loader {
+    display: flex;
+    margin-left: 2px;
+    align-items: center;
+
+    .circle {
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      margin: 0 2px;
+      margin-top: 5px;
+      animation: wave 1.5s ease-in-out infinite paused;
+    }
+  }
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}

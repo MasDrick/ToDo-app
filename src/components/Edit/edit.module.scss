@@ -1,0 +1,49 @@
+@import "/src/variables";
+
+.TodoForm {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  .input {
+    outline: none;
+    background: none;
+    border: none;
+    border: 1px solid $accent;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+
+    width: 385px;
+    color: #fff;
+
+    // Стили для textarea, чтобы он выглядел как input
+    resize: none; // Запрещаем изменение размера
+    overflow: hidden; // Скрываем полосу прокрутки
+    line-height: 1.5; // Настройка межстрочного интервала
+    font-size: 16px; // Настройка размера шрифта
+  }
+
+  .input::placeholder {
+    color: #ffffff4d;
+  }
+
+  .btn {
+    margin-top: 14px;
+    background: $accent;
+    color: #fff;
+    border: none;
+    padding: 0.56rem;
+    border-radius: 7%;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: rgba($accent, 0.8);
+      box-shadow: 0px 2px 10px 5px rgba($accent, 0.2);
+      transform: scale(1.05);
+    }
+  }
+}

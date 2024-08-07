@@ -1,0 +1,181 @@
+@import "/src/variables";
+
+.note {
+  font-family: "Nunito", sans-serif !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0px;
+  max-width: 450px;
+  margin: 0 auto;
+
+  border-bottom: 1px solid $accent;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  &.deleting {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    transform: translateY(-20px); // Подъем заметки вверх при добавлении
+  }
+
+  .justCont {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    justify-content: space-between;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    width: 385px; // Можно изменить в зависимости от ваших нужд
+    overflow: hidden; // Для предотвращения переполнения
+  }
+
+  .editInput {
+    width: 280px;
+    // height: 90px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    overflow-wrap: break-word;
+  }
+
+  .saveButton {
+    border: 1px solid rgba($accent, 0.7);
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: rgba($accent, 0.7);
+    }
+  }
+
+  p {
+    display: inline-block; // или block если хотите чтобы весь контейнер занимал строку
+    position: relative; // Для псевдоэлемента
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 15px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal; // По умолчанию текст будет переноситься
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .add {
+    color: #828282 !important;
+  }
+
+  .strikethrough {
+    color: #fff;
+    position: relative; // Для псевдоэлемента
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0; // Начальная ширина
+      height: 2px; // Толщина линии
+      background-color: #828282;
+      transition: width 0.3s ease-in-out; // Плавная анимация
+      transform: translateY(-50%);
+      will-change: width; // Предупреждаем браузер о том, что ширина будет изменяться
+    }
+
+    &.active::after {
+      width: 100%; // Конечная ширина
+    }
+  }
+}
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.customCheckbox input {
+  display: none; /* Скрываем стандартный чекбокс */
+}
+
+.checkmark {
+  width: 26px;
+  height: 26px;
+  border: 1px solid $accent;
+  border-radius: 2px; /* Закругление углов */
+  margin-right: 10px;
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.customCheckbox input:checked + .checkmark {
+  background-color: $accent; /* Цвет фона при выборе */
+  border-color: $accent; /* Цвет рамки при выборе */
+}
+
+.customCheckbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 6px;
+  height: 12px;
+  border: solid white; /* Цвет галочки */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tools {
+  display: flex;
+  width: 45px;
+  justify-content: space-between;
+
+  .iconTrash {
+    cursor: pointer;
+    path {
+      stroke: #cdcdcd;
+      transition: stroke 0.3s ease;
+    }
+    &:hover {
+      path {
+        stroke: #e50000;
+      }
+    }
+  }
+
+  .iconEdit {
+    cursor: pointer;
+    path {
+      stroke: #cdcdcd;
+      transition: stroke 0.3s ease;
+    }
+    &:hover {
+      path {
+        stroke: $accent;
+      }
+    }
+  }
+}

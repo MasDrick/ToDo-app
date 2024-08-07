@@ -1,0 +1,65 @@
+{
+  "build": {
+    "beforeDevCommand": "yarn dev",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "ToDo",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
+    "allowlist": {
+      "all": true,
+      "fs": {
+        "all": true,
+        "writeFile": true,
+        "readFile": true,
+        "scope": [
+          "$APPDATA",
+          "$APPDATA/*",
+          "$RESOURCE/*",
+          "$RESOURCE",
+          "ToDo/src/assets"
+        ]
+      },
+      "shell": {
+        "all": true,
+        "open": true
+      },
+      "path": {
+        "all": true
+      }
+    },
+    "windows": [
+      {
+        "title": "Notes",
+        "width": 800,
+        "height": 700,
+        "minWidth": 800,
+        "minHeight": 700
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.MasDrick-Inc.dev",
+
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    }
+  }
+}
