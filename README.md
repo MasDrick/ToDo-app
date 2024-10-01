@@ -10,6 +10,9 @@
 - Cross-platform
 
 ### View code
-```
+``` bash
 git clone https://github.com/MasDrick/ToDo-app.git
 ```
+
+## Download App
+[ToDO_installer.msi](./imgForReadme/ToDo_installer.msi)
