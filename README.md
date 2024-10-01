@@ -8,3 +8,8 @@
 ## Future versions of the app will include:
 - Authorization
 - Cross-platform
+
+### View code
+```
+git clone https://github.com/MasDrick/ToDo-app.git
+```
