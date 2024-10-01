@@ -15,4 +15,4 @@ git clone https://github.com/MasDrick/ToDo-app.git
 ```
 
 ## Download App
-[ToDO_installer.msi](./imgForReadme/ToDo_installer.msi)
+[ToDO_installer.msi](https://github.com/MasDrick/ToDo-app/releases)
