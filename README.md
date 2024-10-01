@@ -1,9 +1,10 @@
 # Tauri + React
 
-## Внешний вид программы
+## The appearance of the program
+### Empty screen
 ![Empty screen](https://github.com/MasDrick/ToDo-app/blob/main/imgForReadme/empty.jpg)
-![Fill screen](https://github.com/MasDrick/ToDo-app/blob/main/imgForReadme/Fill.jpg)
-___
-## Будущие версии приложения будут включать в себя:
-- Авторизацию
-- Кроссплатформенность 
+### Screen with Notes
+![Fill screen](./imgForReadme/Fill.jpg)
+## Future versions of the app will include:
+- Authorization
+- Cross-platform
